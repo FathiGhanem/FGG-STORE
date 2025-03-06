@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    width: 100%;
+}
+body{
+    font-family: 'Rajdhani', 'Tajawal', sans-serif;
+    background-color: #181528;
+    overflow-x: hidden;
+    width: 100%;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    justify-content: center;
+    align-items: center;
+}
+/* //////////////////////////////////////////////////////////// */
+.main-header{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    width: 102.4rem;
+
+}
+/* /////////////////////////////////////////////////////// */
+.top-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 15rem;
+}
+.top-left-header{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 35%;
+    margin-bottom: 1rem ;
+}
+
+.top-left-header .search-box {
+    width: 90%;
+    padding: 1.2rem 2rem;
+    border: 0.2rem solid #00aaff;
+    border-radius: 2.5rem;
+    background-color: #181528;
+    color: white;
+    font-size: 1.6rem;
+    outline: none;
+    transition: 0.3s;
+}
+.top-left-header .search-box:focus {
+    border-color: #66c2ff;
+    box-shadow: 0px 0px 1rem rgba(0, 170, 255, 0.5);
+}
+.top-left-header .icons{
+    stroke: #15b0f8;
+    width: 4rem;
+    transition: 0.3s;
+}
+.top-right-header .icons:hover{   
+    stroke: white;
+    cursor: pointer;
+
+}
+
+.top-right-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.top-right-header .icons{   
+    stroke: #15b0f8;
+    width: 4rem;
+    transition: 0.3s;
+}
+.top-right-header .icons:hover{   
+    stroke: white;
+    cursor: pointer;
+
+}
+.top-right-header nav{
+    color: #15b0f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    white-space: nowrap;
+}
+.top-right-header a:link , .top-right-header a:visited{
+    color: #15b0f8;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.top-right-header a:hover{
+    color: white;
+    /* font-weight: bold; */
+}
+/* /////////////////////////////////////////////////////// */
+.b-header nav{
+    display: flex;
+    /* background-color: #00aaff; */
+    justify-content: center;
+    align-items: center;
+    gap: 20rem;
+}
+.b-header a:link , .b-header a:visited{
+    color: white;
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.b-header a:hover{
+    color: #15b0f8;
+    
+}
+/* /////////////////////////////////////////////////////// */
+.hero-section{
+    width: 157.1rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.hero-section .promos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* overflow: hidden; */
+    position: relative;
+}
+.hero-section .promos img{
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.hero-section .promos img:hover{
+    transform: scale(1.01);
+  box-shadow: 0px 1rem 2rem #15b0f8;
+}
+.hero-section .promos .icons{
+    width: 5rem;
+    position: absolute;
+    top : 50%;
+    background-color: white;
+    border-radius: 50%;
+    stroke:#181528;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 1;
+    cursor: pointer;
+    
+}
+.hero-section .promos .icons:hover{
+   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+   box-shadow: 0px 10px 20px #15b0f8;
+}
+.hero-section .promos .left-icon{
+    left: 0;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+    opacity: 0;
+}
+.hero-section .promos .right-icon{
+    right: 0;
+    transform: translate(50%,-50%);
+    
+}
+.hero-section .promos .left-icon:hover{
+    transform: translate(-100%,-50%);
+    stroke: #15b0f8;
+}
+.hero-section .promos .right-icon:hover{
+    transform: translate(100%,-50%);
+    stroke: #15b0f8;
+}
+/* /////////////////////////////////////////////////////// */
+.up-coming{
+    color: white;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 117rem;
+    margin: 2rem;;
+}
+.pBox{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.game-card{
+    display: flex;
+    flex-direction:column ;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.game-card img{
+    border-radius : 1rem;
+    object-fit: cover;
+    
+}
+
+.game-card .game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 0;
+    padding-left: 1rem;
+    font-size: 2rem;
+    color:   #15b0f8;
+    font-weight: bold;
+    /* background-color: rgba(21, 176, 248, 0.4);  */
+    background-color: rgba(0, 0, 0, 0.7); 
+    width: 100%;
+    border-radius: 0px 0px 1rem 1rem;
+}
+.game-card .game-info .game-details{
+    font-size: 1.5rem;
+}
+.games-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 3rem; 
+}
+.games-grid .gamepass-card , .games-grid .plus-card{
+    grid-column: span 2;
+}
+
+.game-card:after{
+    content: "Pre Order";
+    font-size: 2rem;
+    background: #15b0f8;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    padding: 1rem;
+    opacity:0;
+    transition: opacity 0.5s ease;
+}
+.game-card:hover::after {
+    opacity: 1; 
+  }
+.game-card:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 2rem #15b0f8;
+}
+.log-in-frame{
+    height: 70rem;
+    width: 50rem;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;  
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s ease; 
+}
+.log-in-frame button{
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    background-color: #181528;
+    border: none;
+    color: #15b0f8;
+    transition: 0.3s;    
+    cursor: pointer;
+}
+.log-in-frame button:hover{
+    
+    color: white;
+    
+}
+.log-in-frame iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
