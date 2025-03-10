@@ -136,3 +136,15 @@ input:focus , input:hover {
 .forgot-password{
     justify-content: center;
 }
+.valid{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+    display: none;
+}
+.valid p{
+    color: gold;
+}
