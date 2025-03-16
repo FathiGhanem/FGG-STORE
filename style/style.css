@@ -303,6 +303,17 @@ body{
     border: none;
 }
 /* ------------------------------------------------------------------- */
+.most-orderd-section{
+    display: flex;
+    flex-direction: column;
+}
+.most-orderd-p{
+   color: white;
+   font-size:  4rem;
+   margin-left:10rem ;
+
+
+}
 .most-orderd{
 
     /* background-color: #15b0f8; */
@@ -312,6 +323,7 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20rem;
+
 }
 .most-orderd .next ,.most-orderd .prev{
     height: 7rem;
@@ -342,7 +354,7 @@ body{
     overflow: hidden;
 }
 .most-orderd-cards{
-    width: 100rem;
+    min-width: 100%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -408,7 +420,9 @@ body{
 }
 
 .front img{
-    height:50% ;
+    height:15rem ;
+    width :15rem ;
+    object-fit: cover;
     border-radius:3rem;
     margin-top: 2rem;
 }
@@ -432,6 +446,8 @@ body{
 }
 .add-to .fav:hover{
     stroke: red;
+    cursor: pointer;
+    fill: red;
 }
 .add-to button{
     width: 15rem;
@@ -449,7 +465,91 @@ body{
     color: white;
     
 }
+.most-orderd-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+} 
+.most-orderd-section .filter{
+    width: 60%;
+    height: 5rem;
+    background-color: #15b0f8;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #181528;
+    font-size: 2rem;
+    font-weight: bold;
 
+}
+.filter .sort-box ,.filter .sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    gap:1rem;
+}
+.filter .price-sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.filter .sort-box input{
+    height: 2rem;
+    width: 2rem;
+}
+.categ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.categ select{
+    border-radius: 2rem;
+    text-align: center;
+    width: 18rem;
+    height: 3rem;
+    margin-right: 2rem;
+}
+
+/* -----------------media------------------- */
+
+.media {
+    width: 7rem;
+    height: 18rem;
+    position: fixed;
+    bottom: 0%;
+    left: 1%;
+}
+
+.media ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 7rem;
+    height: 7rem;
+}
+.media a:link{
+    transition: 0.3s;
+}
+.media a svg path,
+.media a svg circle {
+    transition: stroke 0.3s ease;
+}
+
+.media a svg {
+    transition: fill 0.3s ease;
+}
+.media .instagram a:hover svg path,
+.media .instagram a:hover svg circle {
+    stroke: white; 
+}
+.media .whatsapp a:hover svg {
+    fill: white; 
+}
 
 /* -----------------animation------------------- */
 @keyframes moveRight {

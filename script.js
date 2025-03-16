@@ -86,71 +86,139 @@ rightIcon.addEventListener('click',promoRight);
 leftIcon.addEventListener('click',promoLeft);
 
 //-------------------------Most Orderd Section------------------------//
-let mostOrderdGames =[
-    {name:'1',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'2', price:'32$' , img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla "},
-    {name:'3',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'4',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'5',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'6',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'7',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'8',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'9',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'10',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
-    {name:'11',price:'20$', img:'img/orderd/gamepass.avif',details:"bla bla bla bla bla bla bla bla bla " },
+let mostOrderdGames = [
+    {name: 'Crew', price: '5$', img: 'img/orderd/crew.jpg', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "322", Categ: "Fortnite"},
+    {name: 'Vbucks', price: '30$', img: 'img/orderd/vbucks.webp', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "67", Categ: "Fortnite"},
+    {name: 'itemShop Gifts', price: '8$', img: 'img/orderd/gifts.webp', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "43", Categ: "Fortnite"},
+    {name: 'Playstation Store', price: '7.5$', img: 'img/orderd/psnStore.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "220", Categ: "Playstation"},
+    {name: 'Playstation Plus', price: '20$', img: 'img/orderd/plus.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "143", Categ: "Playstation"},
+    {name: 'GamePass Ultimate', price: '50$', img: 'img/orderd/ultimate.webp', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "112", Categ: "Xbox"},
+    {name: 'GamePass Core', price: '32$', img: 'img/orderd/core.jpg', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "121", Categ: "Xbox"},
+    {name: 'GamePass PC', price: '25$', img: 'img/orderd/pcgamepass.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "171", Categ: "Xbox"},
+    {name: 'Xbox Store', price: '7.5$', img: 'img/orderd/xboxGiftCards.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "290", Categ: "Xbox"},
 ];
 
+let mostOrderdGames_SORTED = mostOrderdGames.sort((a,b)=>{
+    return b.SalesCount - a.SalesCount ;
+});
+let categ = document.getElementById("most-categ-list");
 let mostOrderdCardsDiv = document.querySelector(".most-orderd-cards");
+let categories = new Set();
+let currentIndex = 0;
+let priceRadio = document.getElementById("price");
+let soldRadio = document.getElementById("sold");
+let nameRadio = document.getElementById("name");
+
+priceRadio.addEventListener('change', function() {
+    if (priceRadio.checked) {
+        mostOrderdGames_SORTED=mostOrderdGames_SORTED.sort((a,b)=>{
+            let priceA = parseInt(a.price.replace('$', ''));
+            let priceB = parseInt(b.price.replace('$', ''));
+            return priceA - priceB;
+        })
+        
+        displayMostOredersCard(mostOrderdGames_SORTED);
+    }
+});
+soldRadio.addEventListener('change', function() {
+    if (soldRadio.checked) {
+        mostOrderdGames_SORTED=mostOrderdGames_SORTED.sort((a,b)=>{
+            return b.SalesCount - a.SalesCount ;
+        })
+        
+        displayMostOredersCard(mostOrderdGames_SORTED);
+    }
+});
+
+nameRadio.addEventListener('change',function(){
+    if(nameRadio.checked){
+        mostOrderdGames_SORTED = mostOrderdGames_SORTED.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    displayMostOredersCard(mostOrderdGames_SORTED);
+})
+
 
 
 
 mostOrderdGames.forEach(game => {
-    let card = document.createElement("div");
-    card.classList.add("mostOrderdCard");
-    card.innerHTML = `
-    <div class = 'front' >
-    <p class="details"> ! </p>
-    <img src="${game.img}">
-    <p class="card-title">${game.name}</p>
-    <p class="price">Price: ${game.price}</p>
-    <div class="add-to">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fav">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-        </svg>
-        <button> Add to Cart </button>
-    </div>
-    </div>
-    <div class="back" style="display: none">
-    <p class="the-details">${game.details}</p>
-     <button class="back-btn">Go Back</button>
-    </div>
-    `;
-
-    mostOrderdCardsDiv.appendChild(card);
+    categories.add(game.Categ);
 });
 
-let mostOrderdCards = document.querySelectorAll(".mostOrderdCard");
-mostOrderdCards.forEach(card => {
-    let detailsBtn = card.querySelector(".details");
-    let front = card.querySelector(".front");
-    let back = card.querySelector(".back");
-    let backBtn = card.querySelector(".back-btn");
-    
+categories.forEach(c => {
+    let option = document.createElement('option');
+    option.value = c;
+    option.textContent = c; 
+    categ.appendChild(option);
+});
 
-    detailsBtn.addEventListener("click", () => {
-        card.style.transform = "rotateY(180deg)";
-        front.style.display = "none";
-        back.style.display = "flex";
+
+categ.addEventListener('change',function(){
+    let selectedCategory = categ.value;
+    if(selectedCategory==="All"){
+        mostOrderdGames_SORTED=mostOrderdGames;
+    }
+    else{
+        mostOrderdGames_SORTED = mostOrderdGames.filter(game => game.Categ === selectedCategory);
         
-    });
-    backBtn.addEventListener("click", () => {
-        card.style.transform = "rotateY(0deg)";
-        front.style.display = "flex";
-        back.style.display = "none";
-    });
-});
+    }
+    displayMostOredersCard(mostOrderdGames_SORTED);
+    
+})
 
-let currentIndex =0;
+
+
+function displayMostOredersCard(games) {
+    mostOrderdCardsDiv.style.transform="";
+    currentIndex=0;
+    mostOrderdCardsDiv.innerHTML=``;
+    games.forEach(game => {
+        let card = document.createElement("div");
+        card.classList.add("mostOrderdCard");
+        card.innerHTML = `
+        <div class='front'>
+            <p class="details"> ! </p>
+            <img src="${game.img}">
+            <p class="card-title">${game.name}</p>
+            <p class="price">Price: ${game.price}</p>
+            <p class="price">Sales Count: ${game.SalesCount}</p>
+            <div class="add-to">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fav">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+                <button> Add to Cart </button>
+            </div>
+        </div>
+        <div class="back" style="display: none">
+            <p class="the-details">${game.details}</p>
+            <button class="back-btn">Go Back</button>
+        </div>
+        `;
+        mostOrderdCardsDiv.appendChild(card);
+    });
+
+    
+    let mostOrderdCards = document.querySelectorAll(".mostOrderdCard");
+    mostOrderdCards.forEach(card => {
+        let detailsBtn = card.querySelector(".details");
+        let front = card.querySelector(".front");
+        let back = card.querySelector(".back");
+        let backBtn = card.querySelector(".back-btn");
+        
+        detailsBtn.addEventListener("click", () => {
+            card.style.transform = "rotateY(180deg)";
+            front.style.display = "none";
+            back.style.display = "flex";
+        });
+        backBtn.addEventListener("click", () => {
+            card.style.transform = "rotateY(0deg)";
+            front.style.display = "flex";
+            back.style.display = "none";
+        });
+    });
+}
+
+displayMostOredersCard(mostOrderdGames_SORTED);
+
 let card = document.querySelector(".mostOrderdCard");
 let cardWidth = card.offsetWidth + 50;
 let prevBtn = document.querySelector(".prev");
@@ -163,12 +231,11 @@ function updateSlide() {
 }
 
 nextBtn.addEventListener("click", () => {
-    if (currentIndex < mostOrderdGames.length - 3) { 
+    if (currentIndex < mostOrderdGames_SORTED.length - 3) { 
         currentIndex++;
         updateSlide();
     }
 });
-
 
 prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) { 
