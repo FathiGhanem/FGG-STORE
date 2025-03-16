@@ -387,7 +387,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     transform: rotateY(180deg);
 }
@@ -513,6 +513,7 @@ body{
     width: 18rem;
     height: 3rem;
     margin-right: 2rem;
+    
 }
 
 /* -----------------media------------------- */

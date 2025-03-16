@@ -87,15 +87,15 @@ leftIcon.addEventListener('click',promoLeft);
 
 //-------------------------Most Orderd Section------------------------//
 let mostOrderdGames = [
-    {name: 'Crew', price: '5$', img: 'img/orderd/crew.jpg', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "322", Categ: "Fortnite"},
-    {name: 'Vbucks', price: '30$', img: 'img/orderd/vbucks.webp', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "67", Categ: "Fortnite"},
-    {name: 'itemShop Gifts', price: '8$', img: 'img/orderd/gifts.webp', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "43", Categ: "Fortnite"},
-    {name: 'Playstation Store', price: '7.5$', img: 'img/orderd/psnStore.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "220", Categ: "Playstation"},
-    {name: 'Playstation Plus', price: '20$', img: 'img/orderd/plus.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "143", Categ: "Playstation"},
-    {name: 'GamePass Ultimate', price: '50$', img: 'img/orderd/ultimate.webp', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "112", Categ: "Xbox"},
-    {name: 'GamePass Core', price: '32$', img: 'img/orderd/core.jpg', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "121", Categ: "Xbox"},
-    {name: 'GamePass PC', price: '25$', img: 'img/orderd/pcgamepass.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "171", Categ: "Xbox"},
-    {name: 'Xbox Store', price: '7.5$', img: 'img/orderd/xboxGiftCards.png', details: "bla bla bla bla bla bla bla bla bla", SalesCount: "290", Categ: "Xbox"},
+    {name: 'Crew', price: '5$', img: 'img/orderd/crew.jpg', details: "Join Fortnite Crew for exclusive monthly rewards! Get the Battle Pass, V-Bucks, and a unique Crew Pack with skins and bonuses!", SalesCount: "322", Categ: "Fortnite"},
+    {name: 'Vbucks', price: '30$', img: 'img/orderd/vbucks.webp', details: "Stock up on V-Bucks and unlock skins, emotes, and more in Fortnite! Spend them in the Item Shop to customize your experience your way!", SalesCount: "67", Categ: "Fortnite"},
+    {name: 'itemShop Gifts', price: '8$', img: 'img/orderd/gifts.webp', details: "Surprise your friends with Fortnite Item Shop gifts! Send exclusive skins, emotes, and more to make their game even more exciting!", SalesCount: "43", Categ: "Fortnite"},
+    {name: 'Playstation Store', price: '7.5$', img: 'img/orderd/psnStore.png', details: "Top up your PlayStation wallet with PSN Gift Cards! Buy games, add-ons, and subscriptions instantly from the PlayStation Store!", SalesCount: "220", Categ: "Playstation"},
+    {name: 'Playstation Plus', price: '20$', img: 'img/orderd/plus.png', details: "Unlock online multiplayer, free monthly games, and exclusive discounts with PlayStation Plus! Choose from Essential, Extra, or Premium plans!", SalesCount: "143", Categ: "Playstation"},
+    {name: 'GamePass Ultimate', price: '50$', img: 'img/orderd/ultimate.webp', details: "Enjoy hundreds of games on console, PC, and cloud with Xbox Game Pass Ultimate! Includes online multiplayer, EA Play, and day-one releases!", SalesCount: "112", Categ: "Xbox"},
+    {name: 'GamePass Core', price: '32$', img: 'img/orderd/core.jpg', details: "Play online with Xbox Game Pass Core! Get access to multiplayer gaming, exclusive deals, and a collection of great games to enjoy", SalesCount: "121", Categ: "Xbox"},
+    {name: 'GamePass PC', price: '25$', img: 'img/orderd/pcgamepass.png', details: "Access a vast library of high-quality PC games with Xbox Game Pass for PC! Enjoy new titles on day one and exclusive member perks.", SalesCount: "171", Categ: "Xbox"},
+    {name: 'Xbox Store', price: '7.5$', img: 'img/orderd/xboxGiftCards.png', details: "Add funds to your Xbox account with Xbox Gift Cards! Use them to buy games, add-ons, and subscriptions from the Microsoft Store.", SalesCount: "290", Categ: "Xbox"},
 ];
 
 let mostOrderdGames_SORTED = mostOrderdGames.sort((a,b)=>{
