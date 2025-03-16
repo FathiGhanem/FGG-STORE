@@ -98,9 +98,10 @@ let mostOrderdGames = [
     {name: 'Xbox Store', price: '7.5$', img: 'img/orderd/xboxGiftCards.png', details: "Add funds to your Xbox account with Xbox Gift Cards! Use them to buy games, add-ons, and subscriptions from the Microsoft Store.", SalesCount: "290", Categ: "Xbox"},
 ];
 
-let mostOrderdGames_SORTED = mostOrderdGames.sort((a,b)=>{
+let mostOrderdGames_SORTED = mostOrderdGames.slice().sort((a,b)=>{
     return b.SalesCount - a.SalesCount ;
 });
+console.log(mostOrderdGames);
 let categ = document.getElementById("most-categ-list");
 let mostOrderdCardsDiv = document.querySelector(".most-orderd-cards");
 let categories = new Set();
@@ -123,7 +124,7 @@ priceRadio.addEventListener('change', function() {
 soldRadio.addEventListener('change', function() {
     if (soldRadio.checked) {
         mostOrderdGames_SORTED=mostOrderdGames_SORTED.sort((a,b)=>{
-            return b.SalesCount - a.SalesCount ;
+            return parseFloat(b.SalesCount) - parseFloat(a.SalesCount) ;
         })
         
         displayMostOredersCard(mostOrderdGames_SORTED);
